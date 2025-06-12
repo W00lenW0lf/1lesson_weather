@@ -1,13 +1,15 @@
 import requests
 
-offices = ['svo', 'london', 'cherepovets']
-def main(offices):
-    for office in offices:
-        url = 'https://wttr.in/' + office
+OFFICES = ['Шереметьево', 'Лондон', 'Череповец']
+
+
+def main(OFFICES):
+    for office in OFFICES:
+        url = 'https://wttr.in/' + office + '?n?q?T?m?M&lang=ru'
         requests.get(url)
         response = requests.get(url)
         print(response.text)
 
 
 if __name__ == '__main__':
-    main(offices)
+    main(OFFICES)
