@@ -1,15 +1,15 @@
 import requests
 
-OFFICES = ['Шереметьево', 'Лондон', 'Череповец']
+payload = {"n": "", "q": "", "T": "", "m": "", "lang": "ru"}
+offices = ['Шереметьево', 'Лондон', 'Череповец']
 
 
-def main(OFFICES):
-    for office in OFFICES:
-        url = 'https://wttr.in/' + office + '?n?q?T?m?M&lang=ru'
-        requests.get(url)
-        response = requests.get(url)
+def main(payload, offices):
+    for city in offices:
+        response = requests.get(f'https://wttr.in/{city}', params=payload)
+        response.raise_for_status()
         print(response.text)
 
 
 if __name__ == '__main__':
-    main(OFFICES)
+    main(payload, offices)
