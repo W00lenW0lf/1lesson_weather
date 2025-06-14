@@ -1,7 +1,7 @@
 import requests
 
-payload = {"n": "", "q": "", "T": "", "m": "", "lang": "ru"}
-offices = ['Шереметьево', 'Лондон', 'Череповец']
+PAYLOAD = {"n": "", "q": "", "T": "", "m": "", "lang": "ru"}
+OFFICES = ['Шереметьево', 'Лондон', 'Череповец']
 
 
 def main(payload, offices):
@@ -12,4 +12,4 @@ def main(payload, offices):
 
 
 if __name__ == '__main__':
-    main(payload, offices)
+    main(PAYLOAD, OFFICES)
